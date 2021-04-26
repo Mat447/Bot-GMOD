@@ -6,7 +6,7 @@ const Discord = require('discord.js'),
     config = require('./config.json');
     fs = require('fs')
     const prefix = config.prefix
-    const annoncechannel= "804748335914287144";
+    const annoncechannel= "834803372166086676";
     const Gamedig = require('gamedig');
     const enmap = require('enmap');
 
@@ -33,13 +33,13 @@ client.on("ready", ()=> {
     setInterval(() => {
         Gamedig.query({
           type: 'garrysmod',
-          host: '149.202.89.98',
-          port: 27015
+          host: '135.125.20.221',
+          port: 27026
         }).then((state) => {
           client.user.setPresence({
             status: "online",
             activity: {
-              name: `AcruxRôleplay : ${state.players.length} / ${state.maxplayers}`,
+              name: `Redline-Roleplay : ${state.players.length} / ${state.maxplayers}`,
               type: "PLAYING"
             }
           })
@@ -68,9 +68,9 @@ client.on('message', async message => {
         if(!channel) return message.reply("Usage: `!ticket-setup #channel`");
 
         let sent = await channel.send(new Discord.MessageEmbed()
-            .setTitle("Ticket AcruxRoleplay")
+            .setTitle("Ticket Redline-Roleplay")
             .setDescription("Réagissez pour ouvrir un ticket!")
-            .setFooter("By MaathisHD")
+            .setFooter("By Mat")
             .setColor("#07b1fa")
         );
 
@@ -159,7 +159,7 @@ client.on("message", async message => {
 })
 client.on("guildMemberAdd", member => {
     var channel = client.channels.cache.get(annoncechannel)
-    member.roles.add("804758005349351434");
+    member.roles.add("834799976797700127");
     let embed = new Discord.MessageEmbed()
     .setTitle(member.user.username+ " vient de rejoindre le serveur !")
     .setDescription("N'hésitez pas à lui souhaiter la bienvenue !")
